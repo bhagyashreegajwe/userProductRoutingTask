@@ -1,0 +1,13 @@
+.router-nav-bar{
+    .navbar-nav .active>.nav-link,
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link.show,
+    .navbar-nav .show>.nav-link {
+        color: floralwhite;
+        font-weight: bold;
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+        color: white !important;
+    }
+}

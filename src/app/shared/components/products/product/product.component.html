@@ -1,0 +1,37 @@
+<div class="edit-product text-right mb-3">
+    <button class="btn-sm btn-info" routerLink="editProduct">Edit Product</button>
+    <button class="btn-sm btn-danger ml-2" (click)="removeProduct(productObj.pid)">Delete Product</button>
+</div>
+
+<div class="row product p-4">
+    <div class="col-4">
+        <img
+            [src]="productObj.pimg"
+            [alt]="productObj.pname"
+            [title]="productObj.pname"
+        >
+    </div>
+    <div class="col-8">
+        <h3>{{productObj.pname}}</h3>
+        <h6>Brand : {{productObj.pbrand}}</h6>
+        <hr>
+        <p>
+            M.R.P. Rs. <span class="price">{{productObj.pprice}}</span>
+        </p>
+        <hr>
+        <div>
+            <label>Product Description : </label>
+            <p>{{productObj.pabout}}</p>
+        </div>
+        <hr>
+        <label>Product Information: </label>
+        <ul class="pinfo">
+            <li>Brand : {{productObj.pbrand}}</li>
+            <li>Operating System : {{productObj.pos}}</li>
+            <li>Memory : {{productObj.pmemory}}</li>
+            <li>Model : {{productObj.pmodel}}</li>
+        </ul>
+    </div>
+</div>
+
+<!-- {{productObj | json}} -->

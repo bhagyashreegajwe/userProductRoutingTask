@@ -1,0 +1,47 @@
+<div class="product-form p-4">
+    <button class="back-btn btn-sm" (click)="goToUsers()">Back</button>
+    <h4 class="text-center" *ngIf="!isInEditMode;else inEditMode">Add User</h4>
+    <ng-template #inEditMode>
+        <h4 class="text-center">Edit User</h4>
+    </ng-template>
+    <div class="row">
+        <div class="offset-md-3 col-6">
+            <form [formGroup]="userForm" (ngSubmit)="onAddUser()">
+                <div class="form-group">
+                    <label for="userFirstName">First Name</label>
+                    <input type="text" matInput formControlName="userFirstName" required name="userFirstName" id="userFirstName" class="form-control">
+                    <span class="text-danger" *ngIf="userForm.controls['userFirstName'].touched && userForm.controls['userFirstName'].hasError('required')">
+                        First Name is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="userLastName">Last Name</label>
+                    <input type="text" matInput formControlName="userLastName" required name="userLastName" id="userLastName" class="form-control">
+                    <span class="text-danger" *ngIf="userForm.controls['userLastName'].touched && userForm.controls['userLastName'].hasError('required')">
+                        Last Name is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="userContact">Contact</label>
+                    <input type="text" matInput formControlName="userContact" required name="userContact" id="userContact" class="form-control">
+                    <span class="text-danger" *ngIf="userForm.controls['userContact'].touched && userForm.controls['userContact'].hasError('required')">
+                        Contact is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="text" matInput formControlName="userEmail" required name="userEmail" id="userEmail" class="form-control">
+                    <span class="text-danger" *ngIf="userForm.controls['userEmail'].touched && userForm.controls['userEmail'].hasError('required')">
+                        Email is required
+                    </span>
+                </div>
+                <div>
+                    <button class="btn-sm btn-info btn" *ngIf="!isInEditMode">Add User</button>
+                    <button class="btn-sm btn-info btn" *ngIf="isInEditMode" (click)="onEditUser()">Update User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

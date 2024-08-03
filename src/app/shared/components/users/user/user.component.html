@@ -1,0 +1,17 @@
+<div class="edit-user text-right mb-3">
+    <button class="btn-sm btn-info" routerLink="editUser">Edit User</button>
+    <button class="btn-sm btn-danger ml-2" (click)="removeUser(userObj.userId)">Delete User</button>
+</div>
+
+<div class="row user p-4">
+    <div class="offset-md-3 col-6">
+        <div class="card">
+            <div class="card-body">
+                <p>First Name : {{userObj.userFirstName}}</p>
+                <p>Last Name : {{userObj.userLastName}}</p>
+                <p>Contact Number : {{userObj.userContact}}</p>
+                <p>Email: {{userObj.userEmail}}</p>
+            </div>
+        </div>        
+    </div>
+</div>

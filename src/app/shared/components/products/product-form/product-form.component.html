@@ -1,0 +1,74 @@
+<div class="product-form p-4">
+    <button class="back-btn btn-sm" (click)="goToProducts()">Back</button>
+    <h4 class="text-center" *ngIf="!isInEditMode;else inEditMode">Add Product</h4>
+    <ng-template #inEditMode>
+        <h4 class="text-center">Edit Product</h4>
+    </ng-template>
+    <div class="row">
+        <div class="offset-md-3 col-6">
+            <form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+                <div class="form-group">
+                    <label for="pname">Product Name</label>
+                    <input type="text" matInput formControlName="pname" required name="pname" id="pname" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pname'].touched && productForm.controls['pname'].hasError('required')">
+                        Product Name is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pabout">Product Description</label>
+                    <textarea type="text" matInput formControlName="pabout" required name="pabout" id="pabout" class="form-control"></textarea>
+                    <span class="text-danger" *ngIf="productForm.controls['pabout'].touched && productForm.controls['pabout'].hasError('required')">
+                        Product Description is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pbrand">Brand</label>
+                    <input type="text" matInput formControlName="pbrand" required name="pbrand" id="pbrand" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pbrand'].touched && productForm.controls['pbrand'].hasError('required')">
+                        Product brand is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pprice">Price</label>
+                    <input type="text" matInput formControlName="pprice" required name="pprice" id="pprice" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pprice'].touched && productForm.controls['pprice'].hasError('required')">
+                        Product Price is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pimg">Product Image</label>
+                    <input type="text" matInput formControlName="pimg" required name="pimg" id="pimg" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pimg'].touched && productForm.controls['pimg'].hasError('required')">
+                        Product image is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pos">Product OS</label>
+                    <input type="text" matInput formControlName="pos" required name="pos" id="pos" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pos'].touched && productForm.controls['pos'].hasError('required')">
+                        Product OS is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pmemory">Product Memory</label>
+                    <input type="text" matInput formControlName="pmemory" required name="pmemory" id="pmemory" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pmemory'].touched && productForm.controls['pmemory'].hasError('required')">
+                        Product Memory is required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="pmodel">Product Model</label>
+                    <input type="text" matInput formControlName="pmodel" required name="pmodel" id="pmodel" class="form-control">
+                    <span class="text-danger" *ngIf="productForm.controls['pmodel'].touched && productForm.controls['pmodel'].hasError('required')">
+                        Product Model is required
+                    </span>
+                </div>
+                <div>
+                    <button class="btn-sm btn-info btn" *ngIf="!isInEditMode">Add Product</button>
+                    <button class="btn-sm btn-info btn" *ngIf="isInEditMode" (click)="onEditProduct()">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

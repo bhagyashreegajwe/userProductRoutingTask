@@ -1,0 +1,31 @@
+.mat-table{
+    width: 100%;
+    border: 1px solid;
+
+    .mat-header-row{
+        .mat-header-cell{
+            text-align: center;
+        }
+    }
+
+    .mat-row{
+        .mat-cell{
+            text-align: center;
+        }
+    }
+
+    .btn-view{
+        width: 100px;
+        border: 0px;
+        border-radius: 5px;
+    }
+}
+
+.add-product{
+    .btn-sm{
+        width: 120px;
+        padding: 0.6rem;
+        border-radius: 20px;
+        border: 0px;
+    }
+}
